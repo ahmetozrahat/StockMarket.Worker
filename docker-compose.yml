@@ -1,0 +1,13 @@
+﻿version: '3.4'
+
+services:
+  stockmarket.worker:
+    image: stockmarket.worker
+    container_name: StockMarket.Worker
+    build:
+      context: .
+      dockerfile: StockMarket.Worker/Dockerfile
+    env_file:
+      - "StockMarket.Worker/env/test/test.env"
+    ports:
+      - "8080:8080"
